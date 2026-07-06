@@ -1,17 +1,14 @@
-import express        from 'express';
+import express         from 'express';
 import { randomBytes } from 'crypto';
 import { classifyMessages, warmUp } from './classifier-os.js';
 
-const app    = express();
-const PORT   = process.env.PORT            || 3002;
-const SECRET = process.env.HERMION_CLASSIFIER_SECRET || '';
-const MODE   = process.env.HERMION_MODE    || 'hosted';  // 'hosted' | 'selfhost'
-
-const IS_SELFHOST = MODE === 'selfhost';
+const app             = express();
+const PORT            = process.env.PORT              || 3002;
+const INTERNAL_SECRET = process.env.HERMION_INTERNAL_SECRET || '';
 
 app.use(express.json({ limit: '10mb' }));
 
-// ── Rate limit + pool constants (hosted mode only) ────────────────────────
+// ── Rate limit + pool constants ───────────────────────────────────────────
 
 const MAX_POOL       = 1000;
 const RATE_LIMIT     = 30;
@@ -67,90 +64,93 @@ function _checkRateLimit(entry) {
   return true;
 }
 
-if (!IS_SELFHOST) {
-  setInterval(_evictExpired, 10 * 60_000);
-}
+setInterval(_evictExpired, 10 * 60_000);
 
 // ── Routes ────────────────────────────────────────────────────────────────
 
 app.get('/health', (_, res) => {
-  res.json({ status: 'ok', mode: MODE });
+  res.json({ status: 'ok' });
 });
 
-// GET /access — hosted mode only
-if (!IS_SELFHOST) {
-  app.get('/access', (req, res) => {
-    _evictExpired();
+// GET /access — issues passkey for public developers
+app.get('/access', (req, res) => {
+  _evictExpired();
 
-    const ip      = _clientIp(req);
-    const hasSlot = _ips.has(ip);
+  const ip      = _clientIp(req);
+  const hasSlot = _ips.has(ip);
 
-    if (!hasSlot && _keys.size >= MAX_POOL) {
-      return res.status(429).json({
-        error:   'capacity_reached',
-        message: 'Hosted classifier is at capacity. Self-host hermion-classifier-os for unrestricted access.',
-        docs:    'https://github.com/hermionai/hermion-classifier-os',
-      });
-    }
-
-    const key = _issueKey(ip);
-
-    res.json({
-      key,
-      rate_limit:     RATE_LIMIT,
-      window_seconds: RATE_WINDOW_MS / 1000,
-      ttl_seconds:    KEY_TTL_MS     / 1000,
-      note:           'One key per IP. Calling /access again issues a fresh key and invalidates the previous one.',
+  if (!hasSlot && _keys.size >= MAX_POOL) {
+    return res.status(429).json({
+      error:   'capacity_reached',
+      message: 'Hosted classifier is at capacity. Self-host hermion-classifier-os for unrestricted access.',
+      docs:    'https://github.com/hermionai/hermion-classifier-os',
     });
+  }
+
+  const key = _issueKey(ip);
+
+  res.json({
+    key,
+    rate_limit:     RATE_LIMIT,
+    window_seconds: RATE_WINDOW_MS / 1000,
+    ttl_seconds:    KEY_TTL_MS     / 1000,
+    note:           'One key per IP. Calling /access again issues a fresh key and invalidates the previous one.',
   });
-}
+});
 
 // POST /classify
 app.post('/classify', async (req, res) => {
-  if (IS_SELFHOST) {
-    // Self-host mode — validate secret header only
-    if (SECRET && req.headers['x-hermion-secret'] !== SECRET) {
-      return res.status(403).json({ error: 'Forbidden' });
+
+  // Internal path — MCP/backend presents secret, bypasses rate limits entirely
+  const internalSecret = req.headers['x-hermion-secret'];
+  if (INTERNAL_SECRET && internalSecret === INTERNAL_SECRET) {
+    const { messages } = req.body;
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
+      return res.status(400).json({ error: 'messages array required' });
     }
-  } else {
-    // Hosted mode — validate passkey
-    const passkey = req.headers['x-hermion-key'];
-
-    if (!passkey) {
-      return res.status(401).json({
-        error:   'missing_key',
-        message: 'Provide your passkey in the X-Hermion-Key header. Call GET /access to obtain one.',
-      });
-    }
-
-    const entry = _keys.get(passkey);
-
-    if (!entry) {
-      return res.status(401).json({
-        error:   'invalid_key',
-        message: 'Key not found or expired. Call GET /access for a new key.',
-      });
-    }
-
-    const ip = _clientIp(req);
-    if (entry.ip !== ip) {
-      return res.status(403).json({
-        error:   'ip_mismatch',
-        message: 'Key was issued to a different IP. Call GET /access from this IP.',
-      });
-    }
-
-    if (!_checkRateLimit(entry)) {
-      return res.status(429).json({
-        error:         'rate_limit_exceeded',
-        message:       `Limit is ${RATE_LIMIT} calls per ${RATE_WINDOW_MS / 1000}s. Call GET /access to reset your window — or self-host for higher throughput.`,
-        retry_after_s: Math.ceil((RATE_WINDOW_MS - (Date.now() - entry.windowStart)) / 1000),
-      });
+    try {
+      const signals = await classifyMessages(messages);
+      return res.json({ signals, count: signals.length });
+    } catch (err) {
+      return res.status(500).json({ error: err.message });
     }
   }
 
-  const { messages } = req.body;
+  // Public path — developer presents passkey, rate limited
+  const passkey = req.headers['x-hermion-key'];
 
+  if (!passkey) {
+    return res.status(401).json({
+      error:   'missing_key',
+      message: 'Provide your passkey in X-Hermion-Key header. Call GET /access to obtain one.',
+    });
+  }
+
+  const entry = _keys.get(passkey);
+  if (!entry) {
+    return res.status(401).json({
+      error:   'invalid_key',
+      message: 'Key not found or expired. Call GET /access for a new key.',
+    });
+  }
+
+  const ip = _clientIp(req);
+  if (entry.ip !== ip) {
+    return res.status(403).json({
+      error:   'ip_mismatch',
+      message: 'Key was issued to a different IP. Call GET /access from this IP.',
+    });
+  }
+
+  if (!_checkRateLimit(entry)) {
+    return res.status(429).json({
+      error:         'rate_limit_exceeded',
+      message:       `Limit is ${RATE_LIMIT} calls per ${RATE_WINDOW_MS / 1000}s. Call GET /access to reset your window — or self-host for higher throughput.`,
+      retry_after_s: Math.ceil((RATE_WINDOW_MS - (Date.now() - entry.windowStart)) / 1000),
+    });
+  }
+
+  const { messages } = req.body;
   if (!messages || !Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: 'messages array required' });
   }
@@ -168,7 +168,7 @@ app.post('/classify', async (req, res) => {
 warmUp()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`[hermion-classifier-os] mode=${MODE} port=${PORT}`);
+      console.log(`[hermion-classifier-os] port=${PORT}`);
     });
   })
   .catch(err => {
