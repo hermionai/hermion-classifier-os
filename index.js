@@ -2,27 +2,24 @@ import express        from 'express';
 import { randomBytes } from 'crypto';
 import { classifyMessages, warmUp } from './classifier-os.js';
 
-const app  = express();
-const PORT = process.env.PORT || 3002;
+const app    = express();
+const PORT   = process.env.PORT            || 3002;
+const SECRET = process.env.HERMION_CLASSIFIER_SECRET || '';
+const MODE   = process.env.HERMION_MODE    || 'hosted';  // 'hosted' | 'selfhost'
+
+const IS_SELFHOST = MODE === 'selfhost';
 
 app.use(express.json({ limit: '10mb' }));
 
-// ── Rate limit + pool constants ───────────────────────────────────────────
+// ── Rate limit + pool constants (hosted mode only) ────────────────────────
 
-const MAX_POOL        = 1000;   // max unique IPs in memory
-const RATE_LIMIT      = 30;     // calls per window per key
-const RATE_WINDOW_MS  = 60_000; // 1 minute window
-const KEY_TTL_MS      = 60 * 60_000; // 1 hour — key expires, dev calls /access again
-
-// ── Passkey store ─────────────────────────────────────────────────────────
-//
-// _keys: passkey → { ip, issuedAt, callCount, windowStart }
-// _ips:  ip      → passkey   (one active key per IP)
+const MAX_POOL       = 1000;
+const RATE_LIMIT     = 30;
+const RATE_WINDOW_MS = 60_000;
+const KEY_TTL_MS     = 60 * 60_000;
 
 const _keys = new Map();
 const _ips  = new Map();
-
-// ── Helpers ───────────────────────────────────────────────────────────────
 
 function _makeKey() {
   return randomBytes(12).toString('hex');
@@ -47,15 +44,13 @@ function _evictExpired() {
 }
 
 function _issueKey(ip) {
-  // Invalidate existing key for this IP if present
   const existing = _ips.get(ip);
   if (existing) {
     _keys.delete(existing);
     _ips.delete(ip);
   }
-
-  const key   = _makeKey();
-  const now   = Date.now();
+  const key = _makeKey();
+  const now = Date.now();
   _keys.set(key, { ip, issuedAt: now, callCount: 0, windowStart: now });
   _ips.set(ip, key);
   return key;
@@ -72,76 +67,86 @@ function _checkRateLimit(entry) {
   return true;
 }
 
-// ── Background cleanup — evict expired keys every 10 minutes ─────────────
-
-setInterval(_evictExpired, 10 * 60_000);
+if (!IS_SELFHOST) {
+  setInterval(_evictExpired, 10 * 60_000);
+}
 
 // ── Routes ────────────────────────────────────────────────────────────────
 
 app.get('/health', (_, res) => {
-  res.json({ status: 'ok' });
+  res.json({ status: 'ok', mode: MODE });
 });
 
-// GET /access
-// Issues a short-lived passkey bound to the caller's IP.
-// One active key per IP — calling again invalidates the old key and issues a new one.
-// Pool capped at MAX_POOL unique IPs. When full, expired keys free slots automatically.
+// GET /access — hosted mode only
+if (!IS_SELFHOST) {
+  app.get('/access', (req, res) => {
+    _evictExpired();
 
-app.get('/access', (req, res) => {
-  _evictExpired();
+    const ip      = _clientIp(req);
+    const hasSlot = _ips.has(ip);
 
-  const ip = _clientIp(req);
+    if (!hasSlot && _keys.size >= MAX_POOL) {
+      return res.status(429).json({
+        error:   'capacity_reached',
+        message: 'Hosted classifier is at capacity. Self-host hermion-classifier-os for unrestricted access.',
+        docs:    'https://github.com/hermionai/hermion-classifier-os',
+      });
+    }
 
-  // If IP already has a slot, cycling is free — no pool check needed
-  const hasSlot = _ips.has(ip);
+    const key = _issueKey(ip);
 
-  if (!hasSlot && _keys.size >= MAX_POOL) {
-    return res.status(429).json({
-      error:   'capacity_reached',
-      message: 'Hosted classifier is at capacity. Self-host hermion-classifier-os for unrestricted access.',
-      docs:    'https://github.com/hermionai/hermion-classifier-os',
+    res.json({
+      key,
+      rate_limit:     RATE_LIMIT,
+      window_seconds: RATE_WINDOW_MS / 1000,
+      ttl_seconds:    KEY_TTL_MS     / 1000,
+      note:           'One key per IP. Calling /access again issues a fresh key and invalidates the previous one.',
     });
-  }
-
-  const key = _issueKey(ip);
-
-  res.json({
-    key,
-    rate_limit:     RATE_LIMIT,
-    window_seconds: RATE_WINDOW_MS / 1000,
-    ttl_seconds:    KEY_TTL_MS    / 1000,
-    note:           'One key per IP. Calling /access again issues a fresh key and invalidates the previous one.',
   });
-});
+}
 
 // POST /classify
-// Classifies messages and returns encoded Hermion Signals.
-// Requires valid passkey in X-Hermion-Key header, issued to the calling IP.
-
 app.post('/classify', async (req, res) => {
-  const passkey = req.headers['x-hermion-key'];
+  if (IS_SELFHOST) {
+    // Self-host mode — validate secret header only
+    if (SECRET && req.headers['x-hermion-secret'] !== SECRET) {
+      return res.status(403).json({ error: 'Forbidden' });
+    }
+  } else {
+    // Hosted mode — validate passkey
+    const passkey = req.headers['x-hermion-key'];
 
-  if (!passkey) {
-    return res.status(401).json({ error: 'missing_key', message: 'Provide your passkey in the X-Hermion-Key header. Call GET /access to obtain one.' });
-  }
+    if (!passkey) {
+      return res.status(401).json({
+        error:   'missing_key',
+        message: 'Provide your passkey in the X-Hermion-Key header. Call GET /access to obtain one.',
+      });
+    }
 
-  const entry = _keys.get(passkey);
- 
-  if (!entry) {
-    return res.status(401).json({ error: 'invalid_key', message: 'Key not found or expired. Call GET /access for a new key.' });
-  }
+    const entry = _keys.get(passkey);
 
-  const ip = _clientIp(req);
-  if (entry.ip !== ip) {
-    return res.status(403).json({ error: 'ip_mismatch', message: 'Key was issued to a different IP. Call GET /access from this IP.' });
-  }
+    if (!entry) {
+      return res.status(401).json({
+        error:   'invalid_key',
+        message: 'Key not found or expired. Call GET /access for a new key.',
+      });
+    }
 
-  if (!_checkRateLimit(entry)) {
-    return res.status(429).json({
-      error:         'rate_limit_exceeded',
-      message:       `Limit is ${RATE_LIMIT} calls per ${RATE_WINDOW_MS / 1000}s. Call GET /access to reset your window — or self-host for higher throughput.`,
-      retry_after_s: Math.ceil((RATE_WINDOW_MS - (Date.now() - entry.windowStart)) / 1000),
-    });
+    const ip = _clientIp(req);
+    if (entry.ip !== ip) {
+      return res.status(403).json({
+        error:   'ip_mismatch',
+        message: 'Key was issued to a different IP. Call GET /access from this IP.',
+      });
+    }
+
+    if (!_checkRateLimit(entry)) {
+      return res.status(429).json({
+        error:         'rate_limit_exceeded',
+        message:       `Limit is ${RATE_LIMIT} calls per ${RATE_WINDOW_MS / 1000}s. Call GET /access to reset your window — or self-host for higher throughput.`,
+        retry_after_s: Math.ceil((RATE_WINDOW_MS - (Date.now() - entry.windowStart)) / 1000),
+      });
+    }
   }
 
   const { messages } = req.body;
@@ -163,7 +168,7 @@ app.post('/classify', async (req, res) => {
 warmUp()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`Listening on ${PORT}`);
+      console.log(`[hermion-classifier-os] mode=${MODE} port=${PORT}`);
     });
   })
   .catch(err => {
