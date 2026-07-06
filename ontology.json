@@ -1,0 +1,375 @@
+{
+  "ontology_version": "1.0.0",
+  "categories": {
+    "cat_a1f2": {
+      "id": 1,
+      "event_types": [
+        "evt_e8727d",
+        "evt_06093b",
+        "evt_1bbe5c",
+        "evt_feb8d1",
+        "evt_67124f",
+        "evt_b43631",
+        "evt_085010",
+        "evt_70d10b",
+        "evt_5e5c32",
+        "evt_5ddbdc",
+        "evt_4e3b4d",
+        "evt_b1ba8d"
+      ]
+    },
+    "cat_b3e7": {
+      "id": 2,
+      "event_types": [
+        "evt_1f0838",
+        "evt_52b3ca",
+        "evt_ce1788",
+        "evt_0932f9",
+        "evt_528d37",
+        "evt_e197b0",
+        "evt_6497d2",
+        "evt_fed1bc"
+      ]
+    },
+    "cat_c4d8": {
+      "id": 3,
+      "event_types": [
+        "evt_2a63ec",
+        "evt_29b59e",
+        "evt_3efa18",
+        "evt_201aaa",
+        "evt_66564d",
+        "evt_b4c06a",
+        "evt_fa4db3",
+        "evt_1a6c95"
+      ]
+    },
+    "cat_d5c9": {
+      "id": 4,
+      "event_types": [
+        "evt_138a6b",
+        "evt_9dd46e",
+        "evt_83444c",
+        "evt_e016ae",
+        "evt_243111",
+        "evt_fa8bc7",
+        "evt_1439a5",
+        "evt_421301"
+      ]
+    },
+    "cat_e6b0": {
+      "id": 5,
+      "event_types": [
+        "evt_c2152f",
+        "evt_dc2934",
+        "evt_5bfcd1",
+        "evt_414631",
+        "evt_ef8e99",
+        "evt_ffc1e4",
+        "evt_80c52a",
+        "evt_0ef409"
+      ]
+    },
+    "cat_f7a1": {
+      "id": 6,
+      "event_types": [
+        "evt_4baacf",
+        "evt_9fb25c",
+        "evt_daee34",
+        "evt_91900b",
+        "evt_5e5bcc",
+        "evt_f0f4a6",
+        "evt_7cb2c3",
+        "evt_6dd844",
+        "evt_3fda69",
+        "evt_11c3f4",
+        "evt_dc8c98"
+      ]
+    },
+    "cat_g8z2": {
+      "id": 7,
+      "event_types": [
+        "evt_ee7b83",
+        "evt_8306c6",
+        "evt_abc944",
+        "evt_6cb486",
+        "evt_028396",
+        "evt_81fb42",
+        "evt_4c2a7e",
+        "evt_f7afc9"
+      ]
+    },
+    "cat_h9y3": {
+      "id": 8,
+      "event_types": [
+        "evt_6a0b69",
+        "evt_0fb6a9",
+        "evt_289448",
+        "evt_380718",
+        "evt_28bb16",
+        "evt_9521ad",
+        "evt_373e02",
+        "evt_37f31d"
+      ]
+    },
+    "cat_i0x4": {
+      "id": 9,
+      "event_types": [
+        "evt_d9615c",
+        "evt_5d5832",
+        "evt_645c0b",
+        "evt_14f20a",
+        "evt_b685ad",
+        "evt_3d0904",
+        "evt_1fce6d",
+        "evt_31bcab"
+      ]
+    },
+    "cat_j1w5": {
+      "id": 10,
+      "event_types": [
+        "evt_f7d0d5",
+        "evt_5a2b72",
+        "evt_4182f7",
+        "evt_ed209d",
+        "evt_d73bd8",
+        "evt_b182e8",
+        "evt_0a7f11"
+      ]
+    },
+    "cat_k2v6": {
+      "id": 11,
+      "event_types": [
+        "evt_db4b2f",
+        "evt_76499a",
+        "evt_2094b3",
+        "evt_1300c5",
+        "evt_410f50",
+        "evt_c9aa94"
+      ]
+    },
+    "cat_l3u7": {
+      "id": 12,
+      "event_types": [
+        "evt_e1b7c2",
+        "evt_91c794",
+        "evt_3994e3",
+        "evt_319180",
+        "evt_d6e447"
+      ]
+    },
+    "cat_m4t8": {
+      "id": 13,
+      "event_types": [
+        "evt_34f82e",
+        "evt_3a4250",
+        "evt_fd8b99",
+        "evt_1366ea",
+        "evt_73972d"
+      ]
+    },
+    "cat_n5s9": {
+      "id": 14,
+      "event_types": [
+        "evt_db5008",
+        "evt_cfef19",
+        "evt_293603",
+        "evt_94c78a",
+        "evt_de22b1"
+      ]
+    },
+    "cat_o6r0": {
+      "id": 15,
+      "event_types": [
+        "evt_10a3ed",
+        "evt_6d9670",
+        "evt_5ff195",
+        "evt_d24868",
+        "evt_d59abd",
+        "evt_5dadee"
+      ]
+    },
+    "cat_p7q1": {
+      "id": 16,
+      "event_types": [
+        "evt_58a8da",
+        "evt_2e9c0a",
+        "evt_44ff99",
+        "evt_58d300",
+        "evt_dfb059",
+        "evt_b217f2",
+        "evt_66bdea"
+      ]
+    },
+    "cat_q8p2": {
+      "id": 17,
+      "event_types": [
+        "evt_404835",
+        "evt_ec1828",
+        "evt_25d1ca",
+        "evt_2c8a33",
+        "evt_c96eac",
+        "evt_26210b",
+        "evt_3f6ef3"
+      ]
+    },
+    "cat_r9o3": {
+      "id": 18,
+      "event_types": [
+        "evt_5e34d0",
+        "evt_bd40a8",
+        "evt_44fd02",
+        "evt_17b999"
+      ]
+    },
+    "cat_s0n4": {
+      "id": 19,
+      "event_types": [
+        "evt_5c1bcb",
+        "evt_f324da",
+        "evt_d7ae7c",
+        "evt_89be65"
+      ]
+    },
+    "cat_t1m5": {
+      "id": 20,
+      "event_types": [
+        "evt_2c618d",
+        "evt_d04899",
+        "evt_496c31",
+        "evt_bae118",
+        "evt_cab1ae"
+      ]
+    },
+    "cat_u2l6": {
+      "id": 21,
+      "event_types": [
+        "evt_88dc8f",
+        "evt_46de79",
+        "evt_4aa466",
+        "evt_993713",
+        "evt_338b05"
+      ]
+    },
+    "cat_v3k7": {
+      "id": 22,
+      "event_types": [
+        "evt_294de9",
+        "evt_037c0a",
+        "evt_e80e0a",
+        "evt_f1e729",
+        "evt_4bac55"
+      ]
+    },
+    "cat_w4j8": {
+      "id": 23,
+      "event_types": [
+        "evt_c92566",
+        "evt_a9b948",
+        "evt_11098c",
+        "evt_f116ad",
+        "evt_fba8f5"
+      ]
+    },
+    "cat_x5i9": {
+      "id": 24,
+      "event_types": [
+        "evt_b949ba",
+        "evt_41bba0",
+        "evt_b719d0",
+        "evt_37bfdc",
+        "evt_3df6d7"
+      ]
+    },
+    "cat_y6h0": {
+      "id": 25,
+      "event_types": [
+        "evt_0fb1e1",
+        "evt_bca826",
+        "evt_8ca95c",
+        "evt_b38f3e",
+        "evt_8b614b"
+      ]
+    },
+    "cat_z7g1": {
+      "id": 26,
+      "event_types": [
+        "evt_a995ab",
+        "evt_4327b2",
+        "evt_b86252",
+        "evt_504dbc",
+        "evt_30eafd"
+      ]
+    },
+    "cat_a8f2": {
+      "id": 27,
+      "event_types": [
+        "evt_c7aee0",
+        "evt_78eb50",
+        "evt_62134e",
+        "evt_21fcdd",
+        "evt_42fa77"
+      ]
+    },
+    "cat_b9e3": {
+      "id": 28,
+      "event_types": [
+        "evt_0abfc9",
+        "evt_b94df6",
+        "evt_e8905d",
+        "evt_423223",
+        "evt_79f850"
+      ]
+    },
+    "cat_c0d4": {
+      "id": 29,
+      "event_types": [
+        "evt_f81eb7",
+        "evt_abf651",
+        "evt_383496",
+        "evt_9f24c2",
+        "evt_4d41a6"
+      ]
+    },
+    "cat_d1c5": {
+      "id": 30,
+      "event_types": [
+        "evt_cf93ea",
+        "evt_fffb6a",
+        "evt_c3c753",
+        "evt_9848a0",
+        "evt_746600"
+      ]
+    },
+    "cat_e2b6": {
+      "id": 31,
+      "event_types": [
+        "evt_9898e6",
+        "evt_13309d",
+        "evt_c39101",
+        "evt_a1679d",
+        "evt_a1130d"
+      ]
+    },
+    "cat_f3a7": {
+      "id": 32,
+      "event_types": [
+        "evt_ef0919",
+        "evt_4ad5c7",
+        "evt_ccfa41",
+        "evt_e19488",
+        "evt_8a26c0"
+      ]
+    }
+  },
+  "goal_hints": [
+    "gh_c1",
+    "gh_r1",
+    "gh_t1",
+    "gh_w1",
+    "gh_a1",
+    "gh_i1",
+    "gh_u1",
+    "gh_co1"
+  ]
+}

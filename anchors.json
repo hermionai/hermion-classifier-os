@@ -1,0 +1,1598 @@
+{
+  "anchor_version": "3.4.0",
+  "description": "Anchor phrases for zero-shot embedding classification. Each event_type maps to several concrete example utterances. Client embeds the incoming message and compares against these anchors via cosine similarity. Written deliberately concrete (not abstract category labels) since embedding models match against realistic phrasing far better than against definitions.",
+  "anchors": {
+    "evt_e8727d": [
+      "You look so good today",
+      "That outfit looks amazing on you",
+      "You're so beautiful, I can't stop staring"
+    ],
+    "evt_06093b": [
+      "You're such a kind and genuine person",
+      "I really admire how patient you are",
+      "You have such a good heart"
+    ],
+    "evt_1bbe5c": [
+      "I love you so much",
+      "I care about you a lot",
+      "You mean everything to me",
+      "I want you",
+      "No correction, I want you",
+      "I miss you and want to see you so badly"
+    ],
+    "evt_feb8d1": [
+      "Hey babe, how's your day",
+      "Good morning love",
+      "Miss you sweetheart",
+      "You're welcome love 😘",
+      "Come here you",
+      "My sweet crazy girl"
+    ],
+    "evt_67124f": [
+      "I want to take you out somewhere special",
+      "I was thinking of planning a surprise for you",
+      "Let's do something romantic this weekend"
+    ],
+    "evt_b43631": [
+      "Thank you for always being there for me through everything",
+      "I really appreciate having you in my life genuinely",
+      "I'm grateful for everything you've done for me",
+      "You took care of me and I'll never forget that",
+      "You told me I could call you anytime and you always meant it",
+      "What you did for me changed things, I won't forget"
+    ],
+    "evt_085010": [
+      "I really miss you right now",
+      "Wish you were here with me",
+      "Can't wait to see you again"
+    ],
+    "evt_70d10b": [
+      "I'm so impressed by you",
+      "You inspire me honestly",
+      "I look up to you a lot",
+      "Wow, that's amazing",
+      "Wow, I didn't expect that",
+      "Wow okay that's something",
+      "Damn that's impressive"
+    ],
+    "evt_5e5c32": [
+      "You're the only one for me",
+      "There's no one else I want to be with",
+      "It's just you, always"
+    ],
+    "evt_5ddbdc": [
+      "I just want to hug you right now",
+      "Can't wait to hold you again",
+      "Sending you a kiss"
+    ],
+    "evt_4e3b4d": [
+      "Remember when we used to hang out all the time",
+      "That reminds me of our first time",
+      "I still think about those nights we had",
+      "It was the best honestly, miss those times",
+      "Damn I miss your chat so much",
+      "I go back to the texts sometimes",
+      "Had to delete them so I could move forward",
+      "Can never find anyone as crazy as you, it was epic"
+    ],
+    "evt_b1ba8d": [
+      "I'll always be here for you no matter what",
+      "I'm never going anywhere, I promise",
+      "I'll love you forever"
+    ],
+    "evt_1f0838": [
+      "You're so dramatic 😂",
+      "Stop it you're ridiculous 😂",
+      "You're impossible lol",
+      "I can't with you 😂",
+      "You're doing the most right now 😁",
+      "You always do this 🙄😄",
+      "You're actually crazy lol",
+      "I swear you're something else 😂"
+    ],
+    "evt_52b3ca": [
+      "I mean I'm not saying anything, just asking",
+      "Purely hypothetical question, don't read into it",
+      "Asking for a completely unrelated reason",
+      "No reason I'm asking, just curious",
+      "I'm just going to leave that right there",
+      "Not that I was thinking about it at all",
+      "I'll let you figure out what I mean by that",
+      "Read between the lines if you want"
+    ],
+    "evt_ce1788": [
+      "You're trouble and you know it",
+      "Why are you so annoyingly charming",
+      "Stop being so easy to like, it's inconvenient",
+      "You're genuinely the worst in the best way",
+      "I hate how much I enjoy talking to you",
+      "You're dangerous for my peace of mind",
+      "It's actually unfair how likeable you are",
+      "You make it very hard to stay annoyed at you"
+    ],
+    "evt_0932f9": [
+      "Oh you went there 😂",
+      "Okay I see you 😏",
+      "You started it not me 😄",
+      "Did you really just say that 😂",
+      "Wow okay 🤭",
+      "I cannot 😂",
+      "That was actually funny 😁",
+      "I'm going to pretend I didn't see that 🙄😄"
+    ],
+    "evt_528d37": [
+      "You're too much 😂",
+      "Big head 🙄😄",
+      "You think you're cute huh 😏",
+      "Look at you 😁",
+      "You're something else 🤭",
+      "Okay Mr Confident 😄",
+      "You wish 😂",
+      "Stop 🤭😂"
+    ],
+    "evt_e197b0": [
+      "Excuse me?? 😂",
+      "How dare you 😄",
+      "I'm offended 😂",
+      "You have some nerve 🤭",
+      "I can't believe you 😂",
+      "Oh so that's what we think 😄",
+      "I'm reporting you for this 😂",
+      "You're lucky I like you 🙄😄"
+    ],
+    "evt_6497d2": [
+      "Any recent photos though? 😏",
+      "Hope your body is doing well",
+      "So are you single these days",
+      "What do you look like now, sending pics?",
+      "You still look the same or better?",
+      "Hope everything is still looking good 😏🌚"
+    ],
+    "evt_fed1bc": [
+      "😏",
+      "🌚😏",
+      "Smile",
+      "😊",
+      "🙃",
+      "😁"
+    ],
+    "evt_2a63ec": [
+      "How are you really feeling about everything going on",
+      "What's been weighing on you lately",
+      "How have you been holding up through all of this",
+      "Tell me what's actually going on with you",
+      "How are things really going between you two",
+      "What do you actually want out of this situation",
+      "Have you thought about what you need right now",
+      "What's been on your mind that you haven't said yet"
+    ],
+    "evt_29b59e": [
+      "I saw your status and was thinking of you",
+      "I noticed what you posted and wanted to check in",
+      "I follow your updates, I know you well",
+      "I've been watching your posts, you've been busy"
+    ],
+    "evt_3efa18": [
+      "Lol you know what this is about",
+      "Classic us honestly",
+      "Remember that thing we always say"
+    ],
+    "evt_201aaa": [
+      "Let me tell you something that happened to me recently",
+      "I went through something similar and it changed how I see things",
+      "Something happened today that I really need to talk about",
+      "I had an experience I've been wanting to share with you",
+      "This thing happened and I keep thinking about it",
+      "I need to tell you about something I went through",
+      "You're the only person I want to talk to about this",
+      "I've been holding this in and I need to get it out"
+    ],
+    "evt_66564d": [
+      "Tell me more about that",
+      "What happened next",
+      "I want to hear the whole story"
+    ],
+    "evt_b4c06a": [
+      "We should do that thing we talked about",
+      "Let's finally make that happen together",
+      "I keep thinking about us doing that",
+      "Voice call, 22 min",
+      "Voice call, 45 min",
+      "Video call, 30 min",
+      "We talked for over an hour on the phone",
+      "Just got off a long call with you"
+    ],
+    "evt_fa4db3": [
+      "Good morning, how are you",
+      "Good afternoon, how's your day going",
+      "Hey, I'm fine and you?",
+      "Hi, how have you been",
+      "Just checking in, how are you doing",
+      "How's everything going with you",
+      "Morning Mario",
+      "Morning dear",
+      "Good morning",
+      "Good afternoon Mario",
+      "Hey good evening"
+    ],
+    "evt_1a6c95": [
+      "I hear you completely and I understand where you're coming from",
+      "That makes total sense given what you've been through",
+      "I'm really listening, tell me more about that",
+      "I get it now, I didn't see it that way before",
+      "That helps me understand you so much better",
+      "I can see why you feel that way about it",
+      "You're not alone in this, I'm here with you",
+      "I appreciate you sharing that with me honestly"
+    ],
+    "evt_138a6b": [
+      "It's going to be okay",
+      "I'm here for you, don't worry",
+      "You're not alone in this"
+    ],
+    "evt_9dd46e": [
+      "You've got this",
+      "I believe in you",
+      "Keep going, you're doing great",
+      "You are absolutely right, keep thinking like that",
+      "That's a great perspective, will think about it"
+    ],
+    "evt_83444c": [
+      "Everything will work out fine",
+      "Don't stress, it's going to be alright",
+      "You have nothing to worry about"
+    ],
+    "evt_e016ae": [
+      "Congratulations, I'm so proud of you",
+      "That's amazing news, well done",
+      "You did it! So happy for you",
+      "You're in safe hands now, she sounds great",
+      "You deserve someone good like that"
+    ],
+    "evt_243111": [
+      "That sounds really hard, I'm sorry",
+      "Eyah, I'm sorry to hear that",
+      "Sorry you're going through that",
+      "Sorry at least you finally have fuel now",
+      "Doh, that must have been rough"
+    ],
+    "evt_fa8bc7": [
+      "Maybe you should try talking to them first",
+      "Here's what I'd do in your situation",
+      "Have you thought about doing it this way",
+      "You should try opening a podcast",
+      "Just register and start, it's not that hard",
+      "Try getting it set up, it's worth it"
+    ],
+    "evt_1439a5": [
+      "I'm here for you whenever you need me",
+      "Call me anytime, I mean it",
+      "You can always lean on me"
+    ],
+    "evt_421301": [
+      "Thank you for listening to me",
+      "I appreciate you helping me through this",
+      "Thanks for always supporting me"
+    ],
+    "evt_c2152f": [
+      "I'm scared of what might happen",
+      "Honestly I'm terrified about this",
+      "I'm really anxious about how this turns out"
+    ],
+    "evt_dc2934": [
+      "Something happened to me a long time ago that still affects me",
+      "I went through something really difficult before",
+      "I don't usually talk about what happened back then"
+    ],
+    "evt_5bfcd1": [
+      "I don't feel good enough sometimes",
+      "I worry that I'm not enough for you",
+      "I feel insecure about this honestly",
+      "Still trying to figure out my direction in life",
+      "I'm still defining what I want to do",
+      "Still trying to define who my audience is",
+      "I haven't figured out my focus yet"
+    ],
+    "evt_414631": [
+      "I've been struggling lately",
+      "I'm not okay right now",
+      "I've been feeling really low",
+      "Life has been hard if I'm honest",
+      "Things haven't been easy for me",
+      "I'm trying to streamline and start somewhere",
+      "Still working out what I want to focus on",
+      "Still looking for a job, being hopeful"
+    ],
+    "evt_ef8e99": [
+      "I really need some support right now",
+      "I need to talk about something important",
+      "I'm currently looking for a job, please keep me in mind",
+      "I need a paying job, things are tight",
+      "Please keep an eye out for any opportunities for me",
+      "I will appreciate if you look out for me",
+      "I have a debt to pay this week and I don't know how",
+      "Things are really tight financially right now",
+      "I just need to get through this week somehow"
+    ],
+    "evt_ffc1e4": [
+      "I've never told anyone this before",
+      "Can I tell you something I haven't shared",
+      "This stays between us okay"
+    ],
+    "evt_80c52a": [
+      "Family means everything to me",
+      "Honesty is really important to me",
+      "I believe in always being loyal",
+      "Feminism to me means something different from how most people use it",
+      "I think once you learn something you have a responsibility",
+      "History explains a lot about gender dynamics if you really study it"
+    ],
+    "evt_0ef409": [
+      "I wish I had done things differently",
+      "I regret how that turned out",
+      "I shouldn't have done that",
+      "Looking back I think I came on too strong",
+      "I think I messed things up between us",
+      "What happened between us was my fault"
+    ],
+    "evt_4baacf": [
+      "I don't think that's right",
+      "I disagree with you on this",
+      "That's not how I see it at all"
+    ],
+    "evt_9fb25c": [
+      "You really shouldn't have done that",
+      "That was a bad decision honestly",
+      "You handled that the wrong way"
+    ],
+    "evt_daee34": [
+      "Wow, must be nice to not care",
+      "Sure, whatever you say",
+      "Must be great being you huh"
+    ],
+    "evt_91900b": [
+      "You're lying to me",
+      "You did this on purpose",
+      "You knew this would hurt me"
+    ],
+    "evt_5e5bcc": [
+      "I didn't do anything wrong",
+      "Why are you blaming me for this",
+      "That's not fair, I didn't mean it like that"
+    ],
+    "evt_f0f4a6": [
+      "Whatever, it doesn't even matter anymore",
+      "I don't care about this at all",
+      "It's not a big deal, just drop it",
+      "I couldn't care less what you think"
+    ],
+    "evt_7cb2c3": [
+      "Oh wow, great job",
+      "Yeah sure, you're so innocent",
+      "Right, because that makes total sense"
+    ],
+    "evt_6dd844": [
+      "Anyway, as I was saying",
+      "Can you let me finish",
+      "You keep cutting me off"
+    ],
+    "evt_3fda69": [
+      "This is your fault, not mine",
+      "You're the one who started this",
+      "If you hadn't done that, none of this would've happened"
+    ],
+    "evt_11c3f4": [
+      "You're absolutely unbelievable, and not in a good way",
+      "Of course you'd do something like that, so typical",
+      "I can't believe you'd stoop to that level",
+      "You're so predictable when it comes to this"
+    ],
+    "evt_dc8c98": [
+      "I don't want to talk about this",
+      "Can we just drop it",
+      "I'm not discussing this right now"
+    ],
+    "evt_ee7b83": [
+      "I'm sorry, I was wrong",
+      "I apologize for what I said",
+      "That was my fault, I'm sorry"
+    ],
+    "evt_8306c6": [
+      "I'm sorry but you also did something wrong",
+      "My bad, but you kind of provoked it",
+      "Sorry if that's how it came across"
+    ],
+    "evt_abc944": [
+      "Hey it's okay, let's calm down",
+      "We don't need to fight about this",
+      "Let's not let this get out of hand"
+    ],
+    "evt_6cb486": [
+      "Can we talk about this calmly",
+      "I want to fix this between us",
+      "Let's figure this out together"
+    ],
+    "evt_028396": [
+      "You're right, I messed up",
+      "I take full responsibility for that",
+      "That was on me",
+      "I think I came on too strong and it ruined things",
+      "I was the one who made it weird between us",
+      "Looking back, that was my mistake not yours"
+    ],
+    "evt_81fb42": [
+      "Maybe we're both just stressed right now",
+      "I don't think either of us meant it that way",
+      "Let's look at this differently",
+      "You never lied to me, I just got confused about what we were",
+      "It wasn't your fault, I misread the situation",
+      "I think we both could have handled that better",
+      "Maybe I'm overthinking this",
+      "I don't think this has to be as big a deal as we're making it"
+    ],
+    "evt_4c2a7e": [
+      "Okay this is getting ridiculous, let's laugh about it",
+      "We're both being dramatic lol",
+      "Truce? This is silly"
+    ],
+    "evt_f7afc9": [
+      "Are we okay now",
+      "How are you feeling after our talk",
+      "Did we resolve things between us"
+    ],
+    "evt_6a0b69": [
+      "K",
+      "Kk",
+      "Kkkk",
+      "Mmk",
+      "Mhm",
+      "Nah",
+      "Nope",
+      "Yh",
+      "Ight",
+      "Aight"
+    ],
+    "evt_0fb6a9": [
+      "I don't want to talk about that right now",
+      "Can we not go there today",
+      "I'd rather not discuss that",
+      "Drop it please",
+      "I said I don't want to talk about it",
+      "Can we just move on",
+      "Not everything needs to be discussed",
+      "I don't want to get into this right now",
+      "Let's just leave it",
+      "I'm not doing this today",
+      "Please just drop it",
+      "I'm not talking about this again"
+    ],
+    "evt_289448": [
+      "Sorry just saw this now, been busy",
+      "Sorry I'm late replying, things have been hectic",
+      "Just saw this, sorry for the delay",
+      "My bad, I've been MIA",
+      "Sorry been off my phone",
+      "I know I've been slow to reply lately",
+      "Sorry I keep missing your messages",
+      "Been a bit distant I know, sorry"
+    ],
+    "evt_380718": [
+      "I don't want to talk about this",
+      "I'm done discussing this topic",
+      "Leave it, it doesn't matter anymore",
+      "I have nothing more to say about it",
+      "I'm not doing this",
+      "I don't care anymore",
+      "Do what you want",
+      "I give up",
+      "Forget it",
+      "Never mind",
+      "It's whatever",
+      "I'm over it"
+    ],
+    "evt_28bb16": [
+      "Ok.",
+      "Kk.",
+      "Noted.",
+      "Sure.",
+      "Fine.",
+      "Whatever.",
+      "If you say so.",
+      "Does it matter.",
+      "Ok then.",
+      "Fine then."
+    ],
+    "evt_9521ad": [
+      "Gotta go, talk later",
+      "I need to run, bye",
+      "Let's continue this another time",
+      "I'll talk to you when I'm back",
+      "I'm heading out",
+      "Gtg",
+      "Later",
+      "Bye",
+      "Talk soon",
+      "Going to sleep, night",
+      "I'm off, speak soon",
+      "Going now, we'll talk"
+    ],
+    "evt_373e02": [
+      "[message left on read]",
+      "[no response after reading]",
+      "[seen, not answered]"
+    ],
+    "evt_37f31d": [
+      "I'm just tired honestly",
+      "I don't know, I'm not feeling it lately",
+      "I've just been in my head",
+      "I don't really have much to say",
+      "Things have just been a lot",
+      "I'm fine, just busy",
+      "Not much to update honestly",
+      "Same as always",
+      "Nothing really",
+      "I don't know",
+      "Whatever",
+      "It doesn't matter",
+      "I'm just not in the mood to talk"
+    ],
+    "evt_d9615c": [
+      "Either you do this or we are finished for good",
+      "This is the last chance I'm giving you",
+      "Fix this now or I'm walking away permanently",
+      "Choose right now or lose me forever"
+    ],
+    "evt_5d5832": [
+      "After everything I've done for you, this is what I get",
+      "I sacrificed so much and you don't even appreciate it",
+      "I guess I just don't matter to you at all",
+      "You never consider how your actions hurt me"
+    ],
+    "evt_645c0b": [
+      "I know you said no but do it anyway",
+      "Stop saying you don't want to and just do it",
+      "Your discomfort doesn't matter right now, just agree",
+      "I don't care that you're uncomfortable, I want this"
+    ],
+    "evt_14f20a": [
+      "You will do exactly what I say",
+      "I'm not asking, I'm telling you to do this",
+      "Answer me right now, I'm not waiting",
+      "You have no choice in this matter"
+    ],
+    "evt_b685ad": [
+      "I'll love you if you do this for me",
+      "I'll forgive you only if you apologize properly",
+      "I'll be nice to you when you start listening",
+      "My feelings depend on whether you do this"
+    ],
+    "evt_3d0904": [
+      "My friend's partner would never do that",
+      "Other people treat their partners better",
+      "Why can't you be more like them",
+      "Even your ex treated you better than this"
+    ],
+    "evt_1fce6d": [
+      "I am the one in charge here and you will respect that",
+      "My word is final, you don't get a vote",
+      "You do not make decisions without consulting me first",
+      "I decide what happens in this relationship"
+    ],
+    "evt_31bcab": [
+      "I want to see if you actually follow through this time",
+      "Prove to me that you'll do what I ask",
+      "Let's see if you actually keep your word for once",
+      "I'm watching to see if you actually listen"
+    ],
+    "evt_f7d0d5": [
+      "What are we exactly",
+      "Where do you see this going",
+      "Are we official now"
+    ],
+    "evt_5a2b72": [
+      "In a few years I want us to be settled down",
+      "I picture us living together someday",
+      "I want to build a future with you",
+      "I wish we could do a couple switch sometime",
+      "Imagine us doing that together someday"
+    ],
+    "evt_4182f7": [
+      "Are you seeing anyone else",
+      "Is it just us or are you talking to other people",
+      "Are we exclusive now"
+    ],
+    "evt_ed209d": [
+      "In five years I hope we're still together",
+      "Long term I want this to work",
+      "I'm thinking about our future a lot"
+    ],
+    "evt_d73bd8": [
+      "I'm all in with you",
+      "I'm committed to making this work",
+      "I'm not going anywhere",
+      "She's my actual fiancée now, not my ex",
+      "We're serious, she's the one",
+      "I won't be far away again",
+      "I won't do that, I promise",
+      "I'll always be here, I mean it"
+    ],
+    "evt_b182e8": [
+      "I'm not sure I'm ready for that yet",
+      "I need more time before we label this",
+      "I don't want to rush into anything"
+    ],
+    "evt_0a7f11": [
+      "Our place feels like home now",
+      "I keep thinking about our future together",
+      "When we move in together"
+    ],
+    "evt_db4b2f": [
+      "Let's do dinner Friday, that new place just opened",
+      "We should all go to the beach this weekend",
+      "Want to catch a movie tomorrow evening",
+      "Let's hang out at your place on Saturday",
+      "We should grab lunch after church on Sunday",
+      "Let's finally do that road trip we keep talking about",
+      "Come over this evening, I'll cook",
+      "Want to do brunch tomorrow, just us two"
+    ],
+    "evt_76499a": [
+      "Okay Friday at 7, I'll be there",
+      "Confirmed, Saturday works perfectly for me",
+      "Done, I'll come over after work",
+      "Yes Sunday brunch, I'm in",
+      "Locked in, see you at the venue",
+      "Perfect, I'll book the reservation now",
+      "Great, I'll pick you up at 6",
+      "Sorted, see you Saturday evening"
+    ],
+    "evt_2094b3": [
+      "Meet me at the coffee place on Allen Avenue",
+      "I'll be at the mall entrance, ground floor",
+      "Let's do your place, mine is far from everyone",
+      "Meet me at the bus stop after the junction",
+      "I'm parked outside the blue gate, come down",
+      "The Uber dropped me at the wrong end, walking now",
+      "I'm at the table by the window inside",
+      "Just got home, the traffic on third mainland was mad"
+    ],
+    "evt_1300c5": [
+      "Let's say 7pm at the restaurant",
+      "How about we meet at 6 outside the mall",
+      "I'll be there by 8, save me a seat",
+      "Can we do 3pm at your place instead",
+      "Let's push it to 5, I get off late today",
+      "How does Saturday at noon work for you",
+      "Morning works better for me, say 10am",
+      "Let's lock in 6:30 at the usual spot"
+    ],
+    "evt_410f50": [
+      "Don't forget we're going out tonight, dress nice",
+      "Reminder — you said you'd call them today",
+      "Remember to bring your ID, they'll ask at the door",
+      "Don't forget the reservation is under my name at 8",
+      "Just reminding you about Sunday, don't cancel on me",
+      "Remember we're meeting at the station not the airport",
+      "Don't forget to pick up the cake on your way",
+      "Heads up we're leaving at 5 not 6 tomorrow"
+    ],
+    "evt_c9aa94": [
+      "Something came up, can we move dinner to Saturday",
+      "I'm running 30 minutes late, please order without me",
+      "Change of plans, let's do Sunday instead",
+      "I have to cancel tonight, family emergency",
+      "Can we push it back by an hour, still in traffic",
+      "Actually let's do your area instead, easier for everyone",
+      "I can't make it to the cinema but I'll meet you after",
+      "Sorry, reschedule to next week? This week is mad"
+    ],
+    "evt_e1b7c2": [
+      "I got the job",
+      "I'm at the airport now",
+      "I'm in a relationship now",
+      "I went for a test, it's malaria",
+      "Sent 1900",
+      "Sent the payment",
+      "Amount is 1452",
+      "The UID is this",
+      "Transaction confirmed",
+      "I've sent you 3100 at rate 1663",
+      "You paid me excess",
+      "Current rate is this",
+      "Address is this",
+      "I want to buy"
+    ],
+    "evt_91c794": [
+      "Why?",
+      "Why though",
+      "What time is it",
+      "Where are you right now",
+      "Did you get my message",
+      "How come",
+      "Really, why"
+    ],
+    "evt_3994e3": [
+      "Done",
+      "Resolved",
+      "Okay",
+      "Yeah",
+      "Alright",
+      "Sure",
+      "Same",
+      "Current",
+      "Noted",
+      "Okay sir",
+      "Yes sir I will",
+      "I will sir",
+      "Thank you sir",
+      "Yes sir",
+      "Okay good afternoon",
+      "Good afternoon sir",
+      "Welcome sir",
+      "Morning",
+      "Good morning sir",
+      "Afternoon",
+      "Thank you",
+      "Thanks",
+      "Welcome",
+      "You're welcome",
+      "Merry Christmas",
+      "Happy New Year",
+      "Same to you",
+      "2500",
+      "1661",
+      "Play"
+    ],
+    "evt_319180": [
+      "Did you hear about what happened in town",
+      "There's a new place that opened nearby",
+      "Did you see the news today"
+    ],
+    "evt_d6e447": [
+      "I think that movie was decent",
+      "Not bad honestly, could be better",
+      "You are absolutely right about that",
+      "People pretend too much in this society",
+      "Honestly don't know when this will end",
+      "The light and fuel situation is terrible",
+      "This is the 100 odds pick",
+      "These are the best odds today",
+      "Zilla got this right",
+      "Algorithm and business model are the key determinants"
+    ],
+    "evt_34f82e": [
+      "That's hilarious honestly",
+      "You go buy fuel for me lol",
+      "I fit cry about this situation 😂",
+      "That's too funny I can't",
+      "I'm dead 😂😂😂"
+    ],
+    "evt_3a4250": [
+      "Sent you a meme, check it out",
+      "This is literally me lol",
+      "You'll find this funny"
+    ],
+    "evt_fd8b99": [
+      "You're so silly I swear",
+      "Stop it you're making me laugh",
+      "You're actually ridiculous lol",
+      "I cover myself with the blood of Jesus 🙈🤣"
+    ],
+    "evt_1366ea": [
+      "I'm such an idiot honestly lol",
+      "Classic me, always the one struggling",
+      "Story of my life, everything at once",
+      "I fit cry, the heartbreak too bad 😂"
+    ],
+    "evt_73972d": [
+      "What if cats could talk",
+      "Random thought but imagine if",
+      "This is such a weird thing to think about"
+    ],
+    "evt_db5008": [
+      "I need us to use protection",
+      "I need you to understand what I need here",
+      "Are you okay with using condoms",
+      "I need things to be safe between us"
+    ],
+    "evt_cfef19": [
+      "I can't do that without protection",
+      "I won't enjoy it if we don't use condoms",
+      "Even though I won't really enjoy it with condoms",
+      "I made it clear I don't want to do it without protection",
+      "That's something I'm not comfortable with"
+    ],
+    "evt_293603": [
+      "No, I'm not doing that",
+      "I won't do that",
+      "That's a no from me"
+    ],
+    "evt_94c78a": [
+      "I don't think I can this time",
+      "Maybe not right now",
+      "I'd rather not, sorry"
+    ],
+    "evt_de22b1": [
+      "Going forward I need you to text me back",
+      "I expect us to communicate better",
+      "Here's what I need from you from now on"
+    ],
+    "evt_10a3ed": [
+      "You're mine, I don't want anyone else near you",
+      "Stop giving other people attention that belongs to me",
+      "I don't like you spending time with them",
+      "You belong to me and I mean that"
+    ],
+    "evt_6d9670": [
+      "Who is that person you keep talking to",
+      "Are you still in contact with your ex",
+      "Why does he always comment on your pictures",
+      "I don't want you seeing that person anymore"
+    ],
+    "evt_5ff195": [
+      "Just tell me you still want me",
+      "Promise me you're not losing feelings",
+      "Am I still the one you want",
+      "Tell me we're going to be okay"
+    ],
+    "evt_d24868": [
+      "Is she more attractive to you than I am",
+      "Do you prefer her over me honestly",
+      "Am I better than your ex in every way",
+      "You think about them more than me don't you"
+    ],
+    "evt_d59abd": [
+      "I saw you were online at 3am, who were you talking to",
+      "I checked and you weren't where you said you'd be",
+      "I noticed you've been liking their posts a lot lately",
+      "I went through your messages and saw something"
+    ],
+    "evt_5dadee": [
+      "You're definitely hiding something from me",
+      "I know you have feelings for someone else",
+      "Stop lying to me about who you talk to",
+      "I think you're cheating and won't admit it"
+    ],
+    "evt_58a8da": [
+      "I want to fuck you so bad right now",
+      "I want to have sex with you tonight",
+      "I've been thinking about your dick all day",
+      "I want you inside me right now",
+      "I can't stop thinking about your pussy",
+      "I want to taste you everywhere",
+      "I want to ride you until we're both done",
+      "I've been wet thinking about you all day",
+      "I want you to fuck me from behind",
+      "I want you to fuck me doggy style",
+      "I'm so hard thinking about you right now",
+      "I want to feel your dick deep inside me",
+      "I want to put your dick in my mouth",
+      "I want to suck your cock until you can't take it",
+      "Your breasts are all I've been thinking about",
+      "I want to grab your ass and pull you close",
+      "I want to eat you out until you come",
+      "I want to do 69 with you tonight",
+      "I want to deep throat you",
+      "I want you in my ass tonight",
+      "I want to try anal with you",
+      "I want to fuck you 🍆💦",
+      "thinking about you all day 🥵",
+      "I need you right now 😈🍑",
+      "come over, you know what I want 🍆",
+      "I've been so wet for you 💦"
+    ],
+    "evt_2e9c0a": [
+      "I keep thinking about last night, you were incredible",
+      "You have no idea what you do to me when you dress like that",
+      "I don't trust myself around you when you look like that",
+      "Stop teasing me, you know exactly what that does",
+      "I keep replaying what you did and I can't focus on anything",
+      "I miss your body so much it's distracting",
+      "I want to see all of you tonight",
+      "I've been turned on since your last message",
+      "You're making it impossible for me to think straight",
+      "I want to touch you so bad right now",
+      "Send me something, I need to see you",
+      "You looked so good in that, I couldn't stop staring",
+      "I keep thinking about that position we tried",
+      "Esp doggy, I keep thinking about it",
+      "Last night was so good, I want to do it again",
+      "I can't get what you did out of my head",
+      "I want to try everything with you",
+      "thinking about you 🥵",
+      "I miss you 😈",
+      "you know what I want 🍑",
+      "come here 👅",
+      "can't stop thinking about you 🔥",
+      "I want to see you so bad 😩",
+      "🍆💦 tonight?",
+      "send me something 🤤"
+    ],
+    "evt_44ff99": [
+      "Can I come over tonight",
+      "Are you wearing anything right now",
+      "Do you want to have sex tonight",
+      "Do you want me to fuck you tonight",
+      "Can I see your breasts",
+      "Send me a picture of your pussy",
+      "Do you want to suck my dick",
+      "Are you wet right now",
+      "Do you want me inside you",
+      "Can I eat you out",
+      "Do you want to fuck",
+      "How do you want it tonight",
+      "Are you hard right now",
+      "Can I see your cock",
+      "Do you want to come over and have sex",
+      "What do you want me to do to you tonight",
+      "Have you ever tried anal",
+      "Do you want to try 69",
+      "You into girls too or just guys",
+      "Are you bisexual, asking for real",
+      "Have you ever been with a woman",
+      "Do you want to try something new tonight",
+      "Are you into girls 👀",
+      "do you want to 🍆💦",
+      "you free tonight 😈"
+    ],
+    "evt_58d300": [
+      "Yes come over now, I want you",
+      "I want your dick inside me right now",
+      "Yes I'm wet, I've been waiting for you",
+      "Come fuck me, I'm ready",
+      "Yes I want to have sex tonight",
+      "I want to ride you all night",
+      "Yes I want to suck your cock",
+      "I want you to eat me out first",
+      "I'm so hard for you right now",
+      "Come here and let me put it in my mouth",
+      "Yes fuck me from behind",
+      "Yes doggy, you know I love that",
+      "I want to feel you come inside me",
+      "Yes I want all of you tonight",
+      "I've been waiting for this all day, come now",
+      "Put it in my mouth, I want to taste you",
+      "I want you to grab my ass while you fuck me",
+      "Yes let's try 69 tonight",
+      "I'm down for anal if you are",
+      "I've been with girls before, I'm bisexual",
+      "I'm a lesbian but I'm attracted to you differently",
+      "Yes I want to deep throat you",
+      "yes come 🍆💦",
+      "I'm ready for you 💦😩",
+      "come here now 😈🍑"
+    ],
+    "evt_dfb059": [
+      "I see someone is in the mood tonight",
+      "Oh so that's what we're doing now",
+      "I mean I'm not saying no",
+      "Someone's been thinking about me",
+      "I might need to see you then",
+      "That's a very interesting question",
+      "I could be persuaded",
+      "Depends on what you're offering",
+      "I'm listening, keep going",
+      "Well now I'm thinking about it too",
+      "I guess we'll have to see later",
+      "You started it not me 😏",
+      "I mean... maybe 🌚",
+      "ask me again tonight 😏",
+      "👀 say that again",
+      "🤭 stop it",
+      "😈 you sure about that"
+    ],
+    "evt_b217f2": [
+      "I just changed the subject, I'm not engaging with that",
+      "I saw what you sent and I'm choosing not to respond to that part",
+      "Moving on from that last message",
+      "Anyway, how was your day",
+      "Let's talk about something else please",
+      "I'm going to pretend that last message didn't happen",
+      "Not going there, let's keep it normal",
+      "Skipping over that one",
+      "I saw it, I'm just not going there",
+      "We can talk but not about that"
+    ],
+    "evt_66bdea": [
+      "Let's not go there right now, I'm not in that headspace",
+      "Can we change the subject, I'm not feeling it tonight",
+      "Not tonight, I'm tired",
+      "Maybe another time, not right now",
+      "I don't really want to talk about that",
+      "Can we just watch something instead",
+      "I'm not in the mood honestly",
+      "Let's just cuddle, I don't want more than that tonight",
+      "Not feeling it today, can we just talk",
+      "I'd rather not go there right now",
+      "Stop, I'm not in that space tonight",
+      "Maybe later, not now"
+    ],
+    "evt_404835": [
+      "I don't see you that way",
+      "I'm not interested in being more than friends",
+      "I don't feel the same way"
+    ],
+    "evt_ec1828": [
+      "You're like a really good friend to me",
+      "I value you as a friend a lot",
+      "We're just friends"
+    ],
+    "evt_25d1ca": [
+      "Haha you're funny",
+      "Let's not make this weird",
+      "I think you're great but"
+    ],
+    "evt_2c8a33": [
+      "Anyway how's your week been",
+      "So did you finish that project",
+      "Let's talk about something else"
+    ],
+    "evt_c96eac": [
+      "Yeah maybe",
+      "I guess we'll see",
+      "Not sure honestly"
+    ],
+    "evt_26210b": [
+      "Oh hey, sorry just saw this. Yeah",
+      "Sorry, been busy. Ok",
+      "Hey, missed this earlier. Cool"
+    ],
+    "evt_3f6ef3": [
+      "Haha we'll see",
+      "I don't know, maybe",
+      "That's a good question"
+    ],
+    "evt_5e34d0": [
+      "Hey, it's been way too long, how are you doing",
+      "I know we haven't talked in a while, I've been thinking about you",
+      "Long time no talk, I wanted to reach out and see how you are",
+      "Hi stranger, I know it's been ages but I wanted to check in",
+      "Been meaning to message you for months, finally doing it",
+      "I was thinking about you recently and realised we haven't spoken in forever",
+      "Hey, I know this is out of nowhere but how have you been",
+      "We fell off and I feel bad about it, wanted to reconnect"
+    ],
+    "evt_bd40a8": [
+      "Sorry I disappeared for a while",
+      "My bad for going quiet",
+      "Sorry I haven't reached out in a bit"
+    ],
+    "evt_44fd02": [
+      "What have you been up to lately",
+      "Fill me in on what I missed",
+      "What's new with you"
+    ],
+    "evt_17b999": [
+      "Hey, random but I just thought of you",
+      "Okay this is random but how are you doing these days",
+      "Hope you're doing well, just wanted to say hi",
+      "Knock knock, still alive over there",
+      "Hey stranger, you crossed my mind today",
+      "This is probably out of nowhere but hey",
+      "Just checking if you're still out there",
+      "Hi, hope things are good with you"
+    ],
+    "evt_5c1bcb": [
+      "What would you do if I moved away",
+      "If I wasn't around, what would you do",
+      "Hypothetically, what if things were different"
+    ],
+    "evt_f324da": [
+      "So do you live alone now",
+      "Are you seeing anyone these days",
+      "So alone or with someone",
+      "What's your situation like now",
+      "Mario where is that promise you said you'd keep"
+    ],
+    "evt_d7ae7c": [
+      "Just wanted to see what you'd say",
+      "I said that to see how you'd react",
+      "Curious what you think about that",
+      "Just checking how you feel about this",
+      "Testing the waters a little"
+    ],
+    "evt_89be65": [
+      "[no reply sent, deliberate pause]",
+      "[waiting to see if they reach out first]",
+      "[intentionally not responding yet]"
+    ],
+    "evt_2c618d": [
+      "Can you handle this by Friday",
+      "Please help me check this for me",
+      "I need you to look into something work related",
+      "This person is unable to login, can you check",
+      "Send the link",
+      "Morning send link",
+      "Send me the details",
+      "Resend that to me",
+      "Please play this game for me on my account",
+      "Can you log in and do this for me",
+      "Handle this transaction for me"
+    ],
+    "evt_d04899": [
+      "We can offer this much, not more",
+      "Here's our final offer",
+      "Let's find a number that works for both of us",
+      "Can you do 1662 instead",
+      "What is the current rate",
+      "Rate is 1663 today",
+      "It has gone up since yesterday",
+      "The rate is not stable right now",
+      "How much are you buying"
+    ],
+    "evt_496c31": [
+      "I don't think this approach will work",
+      "I have concerns about this plan",
+      "Why is he contacting us when it says invalid details",
+      "So why hasn't he reset his password yet"
+    ],
+    "evt_bae118": [
+      "This needs to be done by tomorrow",
+      "We're running out of time on this",
+      "The deadline is tight, please prioritize"
+    ],
+    "evt_cab1ae": [
+      "Great work on this project",
+      "Really solid presentation today",
+      "Nice job handling that client",
+      "The beauty of this business model is clear",
+      "Similarity doesn't yield equality in this space"
+    ],
+    "evt_88dc8f": [
+      "Really great connecting with you today",
+      "Loved hearing about what you're building",
+      "Your background is exactly the kind of perspective I've been looking for",
+      "I've been following your work for a while, glad we finally connected",
+      "Mutual friend mentioned you, really glad they made the intro"
+    ],
+    "evt_46de79": [
+      "We're actually working on something very similar",
+      "I think there's a real overlap between what we're both doing",
+      "This feels like a conversation worth continuing",
+      "I'd love to explore what a collaboration might look like",
+      "There's definitely something here worth digging into together"
+    ],
+    "evt_4aa466": [
+      "Just wanted to check in and see how things are going on your end",
+      "Circling back to see if anything has changed since we last spoke",
+      "Hope the launch went well, would love to hear how it's tracking",
+      "Checking in, no pressure at all, just want to stay in touch",
+      "How has Q3 been treating you so far"
+    ],
+    "evt_993713": [
+      "Thank you for making that introduction, it was really valuable",
+      "The person you connected me with was incredibly helpful",
+      "That referral came through, really appreciate you thinking of me",
+      "Your recommendation opened a door I didn't expect, thank you",
+      "I told them you sent me, they were very warm"
+    ],
+    "evt_338b05": [
+      "Really appreciate you taking the time to speak with me",
+      "Your advice on this has been genuinely useful",
+      "Thank you for being so generous with your time and insight",
+      "That feedback changed how I'm approaching this, thank you",
+      "I won't forget how helpful you were at this stage"
+    ],
+    "evt_294de9": [
+      "This solves the exact problem your team is dealing with right now",
+      "Most companies your size save about 10 hours a week with this",
+      "You'll stop losing customers to things that slip through the cracks",
+      "It integrates with what you already use so there's no disruption",
+      "The teams that use this close deals faster, we've seen it repeatedly",
+      "Think of it as hiring someone whose only job is keeping everything on track",
+      "Your competitors are already using something like this, this is better",
+      "The return on this shows up in your numbers within the first 60 days"
+    ],
+    "evt_037c0a": [
+      "We're already working with three companies in your space",
+      "One of your competitors just signed with us last month",
+      "The team at Stripe uses this exact workflow",
+      "We've processed over a million conversations on this infrastructure",
+      "Our NPS is 72, which is rare for B2B software"
+    ],
+    "evt_e80e0a": [
+      "Would you be open to a quick 20 minute demo this week",
+      "I'd love to show you what this looks like in practice",
+      "Can I walk you through a live example on a call",
+      "Let me show you rather than describe it, when are you free",
+      "I can have something ready to show you by Thursday"
+    ],
+    "evt_f1e729": [
+      "Your sales team gets their time back for actual selling not admin",
+      "Your support team responds faster and customers stay longer",
+      "You stop manually doing things that should have been automated already",
+      "The visibility you get into your pipeline changes how you make decisions",
+      "Your team stops dropping balls because nothing gets missed",
+      "You can finally see what's actually happening in your customer conversations",
+      "The people on your team that hate the current process will thank you",
+      "You spend less time on reports and more time on what actually moves revenue"
+    ],
+    "evt_4bac55": [
+      "We're onboarding the last cohort of this pricing tier this quarter",
+      "The rate we discussed is only available through end of month",
+      "We have a slot opening up in our implementation queue next week",
+      "A few other teams in your space are evaluating right now",
+      "This window won't stay open indefinitely but there's no pressure"
+    ],
+    "evt_c92566": [
+      "The pricing is a bit higher than what we had budgeted for",
+      "We love the product but the cost is a blocker right now",
+      "Can we talk about flexibility on the price",
+      "That's more than we can commit to at this stage",
+      "We'd need to see more value before we could justify that number"
+    ],
+    "evt_a9b948": [
+      "The timing isn't great for us right now",
+      "We're in the middle of a transition, can we revisit in Q1",
+      "We're not quite ready to move on this yet",
+      "We need a few more months before we'd be in a position to commit",
+      "Let's stay in touch but the timing is off right now"
+    ],
+    "evt_11098c": [
+      "We've been burned by vendors who overpromised before",
+      "How do I know this will actually work for our use case",
+      "We'd need to see it working in our environment before we commit",
+      "Can we talk to some of your existing customers first",
+      "I want to make sure this isn't just a demo that looks good"
+    ],
+    "evt_f116ad": [
+      "We're also looking at what your competitors are offering",
+      "How does this compare to what we'd get with the alternative",
+      "The other solution we looked at was significantly cheaper",
+      "What do you have that they don't",
+      "We've had a good relationship with our current vendor"
+    ],
+    "evt_fba8f5": [
+      "I understand the concern, let me show you how other teams have approached this",
+      "That's actually the most common thing we hear, and here's why it usually resolves",
+      "The timing concern is valid, let's talk about a phased approach",
+      "On the price point, let me show you the ROI calculation we built for a similar team",
+      "I hear you on the trust piece, that's exactly why we offer a pilot"
+    ],
+    "evt_b949ba": [
+      "Let's set up a follow up call to go through the details",
+      "The next step from our side would be to send over a proposal",
+      "Can we get the right people in a room together next week",
+      "I'll send you the agreement and we can go from there",
+      "Let's move this forward, what does your decision timeline look like"
+    ],
+    "evt_41bba0": [
+      "I'd love to loop in our CTO for the technical conversation",
+      "Can we get your procurement team involved at this stage",
+      "Who else needs to be part of this decision on your side",
+      "I want to make sure the right people have seen this",
+      "Let's get your legal team the paperwork early so there are no surprises"
+    ],
+    "evt_b719d0": [
+      "I've sent over the proposal, let me know if you have any questions",
+      "The deck is in your inbox, happy to walk through it on a call",
+      "Sent you the terms, take your time reviewing",
+      "Proposal is over, we included three tiers so you can see the options",
+      "You should have the agreement now, we kept it simple"
+    ],
+    "evt_37bfdc": [
+      "Legal has come back with a few edits, nothing major",
+      "We're aligned on the commercial terms, just working through the legal language",
+      "The MSA is standard, but happy to walk through any sections",
+      "We can be flexible on the payment terms if that helps",
+      "Almost there, just a few signatures needed"
+    ],
+    "evt_3df6d7": [
+      "If we can sign by end of month we can start onboarding immediately",
+      "We're targeting a go-live in six weeks, does that work for your team",
+      "Implementation would take about two weeks from kickoff",
+      "Let's aim for end of Q2 for full rollout",
+      "We can work backwards from your deadline and make it work"
+    ],
+    "evt_0fb1e1": [
+      "Are you ready to move forward with this",
+      "Can we get this signed this week",
+      "What would it take to get a yes from you today",
+      "I'd like to ask for your business, are we doing this",
+      "Let's just do this, what do you need from me to close"
+    ],
+    "evt_bca826": [
+      "So let's plan the kickoff for next Tuesday",
+      "I'll have legal send over the final version today",
+      "I'll put you down for the enterprise tier and we'll get started",
+      "Let's lock in the start date and work backwards",
+      "I'll set up the onboarding call for your team"
+    ],
+    "evt_8ca95c": [
+      "If the price were right, would everything else be ready to go",
+      "Assuming we can sort the timing, is this the solution you want",
+      "Is there anything standing between you and a yes right now",
+      "If I can get you a pilot, would you be willing to commit to the full contract after",
+      "What's the one thing that needs to be true for you to say yes"
+    ],
+    "evt_b38f3e": [
+      "This is the best we can do on price, I've gone as far as I can go",
+      "I've pushed internally and this is our final number",
+      "Take it or leave it isn't usually how I operate but we're at the floor",
+      "This is the last version of this offer I can put in front of you",
+      "We've given everything we can give, this is the deal"
+    ],
+    "evt_8b614b": [
+      "So we're agreed, you're moving forward with us",
+      "Just to confirm, you're in, we're doing this",
+      "Great, I'll send the countersigned agreement back today",
+      "Excellent, welcome aboard, let's get started",
+      "Done, I'll get the team moving on onboarding right away"
+    ],
+    "evt_a995ab": [
+      "Just bumping this up in case it got lost in your inbox",
+      "Following up on my message from last week, happy to answer any questions",
+      "Checking in to see if you had a chance to look at what I sent over",
+      "No pressure at all, just wanted to make sure this didn't slip through",
+      "Circling back on this when you have a moment",
+      "I know you're busy, just wanted to keep this on your radar",
+      "Following up in case the timing is better now than when I first reached out",
+      "Just checking in, let me know if you need anything from my side"
+    ],
+    "evt_4327b2": [
+      "Saw this article and thought of our conversation, thought you might find it useful",
+      "We just released something relevant to what you mentioned, wanted to share",
+      "Came across a case study that maps closely to your situation",
+      "Had another thought on what we discussed, wanted to share it quickly",
+      "Something came up that I think changes the picture we discussed"
+    ],
+    "evt_b86252": [
+      "I'll take your silence as a no for now, completely understand",
+      "I won't keep following up after this, but wanted to leave the door open",
+      "Assuming the timing isn't right, feel free to reach out when it is",
+      "This will be my last message, I don't want to be a nuisance",
+      "I'll close out this thread but would love to reconnect when things change",
+      "No hard feelings if this isn't the right fit, wishing you well either way",
+      "I'll stop reaching out after this one, but the offer stands whenever you're ready",
+      "Taking a step back but would genuinely love to revisit this down the line"
+    ],
+    "evt_504dbc": [
+      "It's been a while since we spoke, wanted to reconnect",
+      "Reached out a few months ago, not sure if the timing was off",
+      "We met at the conference earlier this year, wanted to follow up",
+      "You went quiet after our last conversation, is everything okay on your end",
+      "Things change, happy to revisit this if circumstances are different now"
+    ],
+    "evt_30eafd": [
+      "Just checking in on the proposal we sent over last week",
+      "Wanted to see if you'd had a chance to look at the terms",
+      "Any questions on what we sent, happy to jump on a call",
+      "Did the proposal land okay, I want to make sure you have everything you need",
+      "Following up on the agreement, let me know if you need any changes"
+    ],
+    "evt_c7aee0": [
+      "This feature is completely broken and I need it fixed urgently",
+      "Nothing is working since the last update, what happened",
+      "I keep getting an error every time I try to do this",
+      "The app crashes every single time I open it",
+      "This stopped working yesterday and I have no idea why",
+      "I've tried three times and it keeps failing with the same error",
+      "Your system is down and I'm losing work because of it",
+      "This is a critical bug that's blocking my entire workflow"
+    ],
+    "evt_78eb50": [
+      "I was charged twice this month and nobody is responding",
+      "You took money from my account without my permission",
+      "I cancelled my subscription and you still charged me",
+      "This charge is wrong, I need it reversed immediately",
+      "I've been overcharged and I want my money back now",
+      "Why is there an extra charge on my statement this month",
+      "I never agreed to this billing amount, this is wrong",
+      "I need a refund processed today, not next week"
+    ],
+    "evt_62134e": [
+      "I can't log into my account and I need access urgently",
+      "My password reset isn't working",
+      "I've been locked out and I have a deadline",
+      "I can't access my data and it's critical for a meeting today",
+      "My team lost access after the update and we're blocked"
+    ],
+    "evt_21fcdd": [
+      "I need this feature and I need it now, this is blocking us",
+      "We can't use the product without this capability",
+      "This gap is causing real business problems for us",
+      "We were told this was coming, where is it",
+      "Without this we're going to have to look at alternatives"
+    ],
+    "evt_42fa77": [
+      "If this isn't fixed today I am cancelling my account",
+      "I've been waiting three days for a response, this is unacceptable",
+      "I'm going to dispute this charge with my bank if you don't fix it",
+      "This is the third time I've raised this issue and nothing has changed",
+      "I'm going to leave a public review if this isn't sorted",
+      "I need to speak to a manager right now, not a bot",
+      "Your support has been completely useless, I want escalation",
+      "If I don't hear back today I'm taking my business elsewhere"
+    ],
+    "evt_0abfc9": [
+      "I can see exactly what happened here and I'm fixing it now",
+      "Thank you for reporting this, I've reproduced the issue",
+      "I understand the problem, let me take ownership of this",
+      "I can confirm the error on our end and I'm on it",
+      "I see what went wrong, this is our mistake and I'll correct it",
+      "Got it, I know exactly what caused this, fixing it now",
+      "I've identified the issue, give me a few minutes",
+      "I can see the problem in your account, I'm resolving it"
+    ],
+    "evt_b94df6": [
+      "Done, the issue has been fully resolved on our end",
+      "Everything is fixed now, please try again and let me know",
+      "The problem is sorted, you should have full access again",
+      "We've pushed the fix, it should be working correctly now",
+      "Your account has been corrected, I've verified it myself",
+      "All fixed, I tested it and everything is working as expected",
+      "The error is gone, you should be good to go now",
+      "Resolved, we've updated your account and confirmed it's working"
+    ],
+    "evt_e8905d": [
+      "Your refund is confirmed and will be back in your account shortly",
+      "We've processed the full refund, no further action needed from you",
+      "The overcharge has been reversed and we've added a credit for the inconvenience",
+      "Refund is done, I've also made sure the billing issue won't recur",
+      "You'll see the refund in the next few days, sorry again for the confusion"
+    ],
+    "evt_423223": [
+      "While we work on the fix, here's a workaround that should unblock you",
+      "This isn't ideal but here's how you can get around it for now",
+      "The permanent fix is coming but in the meantime try this",
+      "This will work until we push the update later this week",
+      "Not perfect but this should get you moving again today"
+    ],
+    "evt_79f850": [
+      "Thank you so much, that actually fixed it completely",
+      "You've been incredibly helpful, I really appreciate it",
+      "That sorted it out, thank you for being so quick",
+      "Amazing support, I wasn't expecting it to be resolved so fast",
+      "Thank you for taking this seriously and actually fixing it",
+      "You've restored my faith in this product honestly",
+      "Really appreciate how you handled this, thank you",
+      "That's exactly what I needed, thank you for sorting it out"
+    ],
+    "evt_f81eb7": [
+      "We're at 50k MRR growing 40 percent month on month for six months",
+      "94 percent retention at 12 months without a customer success team",
+      "We closed three enterprise accounts in Q3 with zero outbound",
+      "Our NPS is 72, that's top 5 percent for B2B software at our stage",
+      "Word of mouth is our only acquisition channel and we're still growing this fast",
+      "We've processed over a million conversations with zero infrastructure incidents",
+      "Churn is effectively zero because the product gets stickier with every conversation",
+      "Eight months in, team of four, and we're already in the workflows of Fortune 500 teams"
+    ],
+    "evt_abf651": [
+      "We're building the primitive that all conversation intelligence runs on top of",
+      "In five years every CRM, every messaging platform, every support tool will need this layer",
+      "Nobody has solved the physics of conversation at scale, that's what we're doing",
+      "The incumbents optimise for features, we're building the underlying model of how conversations work",
+      "This becomes infrastructure, not software — and infrastructure compounds",
+      "We're not competing with Salesforce, we're becoming the layer underneath it",
+      "Every relationship on earth runs through a conversation, we're the intelligence layer for all of it",
+      "The data moat builds with every conversation processed — nobody can buy their way into that"
+    ],
+    "evt_383496": [
+      "The total addressable market here is north of 50 billion",
+      "There are 4 billion messaging app users and none of them have intelligence",
+      "Every sales team, every support desk, every relationship is a potential customer",
+      "Even a 1 percent capture of this market is a billion dollar company",
+      "The wedge is consumer, the ceiling is enterprise infrastructure"
+    ],
+    "evt_9f24c2": [
+      "We're raising a 2 million pre-seed to get to Series A metrics",
+      "We're looking for a lead investor who understands this space",
+      "The round is 500k at a 5 million cap and we have half committed",
+      "We need 18 months of runway to hit the milestones that make this a no-brainer at Series A",
+      "We're not raising forever, we're raising to get to the next inflection point"
+    ],
+    "evt_4d41a6": [
+      "The reason we're differentiated from existing tools is the physics layer",
+      "You're right that it's a crowded space but nobody is doing it this way",
+      "The moat isn't the feature set, it's the data flywheel",
+      "We've thought a lot about that risk and here's how we're mitigating it",
+      "That's a fair concern and here's what the numbers actually show"
+    ],
+    "evt_cf93ea": [
+      "We're ready to move on this whenever you are",
+      "Everything is in place on our end, just waiting for your signal",
+      "The team is prepared, we can start immediately",
+      "I've done the work, I'm confident in where we are",
+      "We've stress tested this and we're comfortable with the result"
+    ],
+    "evt_fffb6a": [
+      "I'm confident this is the right approach",
+      "I know this space well and I believe in what we're doing",
+      "I've been through this before and I know how it plays out",
+      "I'm not worried about the competition, we know our edge",
+      "This is the thing I'm most certain about in the whole strategy"
+    ],
+    "evt_c3c753": [
+      "I built this from scratch so I know every detail",
+      "I've solved this exact problem at my last company",
+      "The technical architecture is solid, I can walk you through any part of it",
+      "I've run this playbook before and I know where the traps are",
+      "You're in good hands, this is exactly what I do best"
+    ],
+    "evt_9848a0": [
+      "We just hit a milestone I'm genuinely proud of",
+      "The team pulled off something really difficult this week",
+      "We got accepted into a program that accepts fewer than 2 percent of applicants",
+      "We closed our biggest customer to date without any external help",
+      "We shipped on time and it works exactly as designed"
+    ],
+    "evt_746600": [
+      "I've done my homework on your company and I know why this fits",
+      "I've prepared a detailed breakdown of the proposal",
+      "I anticipated your questions and I have the data ready",
+      "I've modelled out three scenarios so we can pressure test together",
+      "I came prepared with references, a demo, and the contract if you're ready"
+    ],
+    "evt_9898e6": [
+      "I really hope this works out the way we're planning",
+      "I'm feeling good about where this is heading",
+      "Things are starting to come together in a way that feels right",
+      "I'm optimistic about this even if I can't fully explain why",
+      "Something tells me this is going to be good"
+    ],
+    "evt_13309d": [
+      "I'm really looking forward to seeing how this plays out",
+      "I've been thinking about this conversation all week",
+      "Can't wait to see where this goes",
+      "I'm excited about what's coming even though I know it takes time",
+      "The next few months feel important, I'm ready for them"
+    ],
+    "evt_c39101": [
+      "I trust the process even when it's slow",
+      "I believe in this even on the days it's hard to see clearly",
+      "I know this is right even if I can't prove it yet",
+      "I'm committed to seeing this through regardless",
+      "My conviction here hasn't wavered, not even a little"
+    ],
+    "evt_a1679d": [
+      "I think this is going to be better than we expect",
+      "The signs are all pointing in the right direction",
+      "I've never been more optimistic about where things are",
+      "Everything feels aligned in a way it hasn't before",
+      "I genuinely think the best is still ahead"
+    ],
+    "evt_a1130d": [
+      "Still waiting to hear back but I'm staying positive",
+      "No news yet but I'm not losing hope",
+      "I know it takes time, I'm patient",
+      "Fingers crossed, I think this is going to come through",
+      "Hoping for good news, I'll know soon"
+    ],
+    "evt_ef0919": [
+      "I didn't expect you to pull that off, genuinely impressed",
+      "That's a really significant accomplishment, well done",
+      "I had no idea you'd done all of that, respect",
+      "You built that yourself? That's remarkable",
+      "That result is better than anything I've seen in this space"
+    ],
+    "evt_4ad5c7": [
+      "That's a really sharp observation, I hadn't thought of it that way",
+      "The way you framed that just changed how I see the whole thing",
+      "That's genuinely insightful, where did that come from",
+      "I've been thinking about this for months and you just solved it in a sentence",
+      "That's the kind of thinking that separates good from great"
+    ],
+    "evt_ccfa41": [
+      "The quality of this is way above what I expected",
+      "You shipped this faster than I thought was possible",
+      "The attention to detail here is exceptional",
+      "I've reviewed a lot of work and this stands out",
+      "How did you get this done in that timeframe, seriously"
+    ],
+    "evt_e19488": [
+      "Wait, you actually did that? I'm genuinely surprised",
+      "I underestimated you, and I mean that as a compliment",
+      "I didn't think this was possible and you just proved me wrong",
+      "That's not what I expected, in the best way",
+      "Okay, I'm genuinely impressed and I don't say that lightly"
+    ],
+    "evt_8a26c0": [
+      "This is excellent work, I want to say that clearly",
+      "You should be proud of what you've built here",
+      "I'm going to tell everyone about what you've done",
+      "I want to make sure you know how good this actually is",
+      "Credit where it's due, this is outstanding"
+    ]
+  }
+}
