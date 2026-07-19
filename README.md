@@ -1,296 +1,200 @@
-# hermion-classifier-os
+<!-- ─────────────────────────────────────────────────────────────────────────
+PATCH — hermion-classifier-os/README.md
 
-**Open source signal classifier for [Hermion](https://hermionai.xyz) — the first interaction intelligence engine built on a proprietary physics theorem.**
+INSERT the two sections below immediately after the "Message format" section
+and before the "Signal output" section.
 
-Hermion models the dynamics of any relationship — making it descriptive, diagnosable, and predictive. Without ever reading your messages.
+Find this line:
+  ## Signal output
 
-This classifier is the privacy layer that makes that possible.
-
----
-
-## What this does
-
-Every message you send carries more than its words. It carries intent, energy, emotional direction — interaction dynamics that accumulate into a structural pattern over time.
-
-`hermion-classifier-os` takes raw conversation messages and extracts **Hermion Signals** — a compact, encoded representation of interaction dynamics. No message content is retained. No text is transmitted. Only the mathematical signal reaches Hermion's analysis engine.
-
-```
-Raw messages → [hermion-classifier-os] → Encoded Hermion Signals → Hermion API
-     ↑                                                                    ↓
- your device                                                     Interaction intelligence
-```
-
-The classifier runs locally or on your own server. You control where it runs. You verify what leaves it.
+Insert everything between the markers above it.
+───────────────────────────────────────────────────────────────────────── -->
 
 ---
 
-## Why open source
+## Meeting Intelligence
 
-We open sourced this classifier so you can verify our architecture — not replicate our intelligence.
+Meeting transcripts work identically to messaging. Parse the transcript into the standard `{ actor, ts, text }` message array, then call the classifier exactly as normal — nothing else changes.
 
-Inspect this code. Confirm that no message is stored, logged, or transmitted beyond classification. The output is encoded in Hermion's proprietary signal language — meaningful only to Hermion's analysis engine.
+### Supported transcript formats
 
-**Open source is our contract with you. Hermion Signals are our asset.**
+All four formats normalize to the same message array.
 
----
+**Format 1 — Zoom / Otter.ai / Fireflies labeled turns**
+```
+Alex Chen  00:01:23
+We've been seeing really strong retention numbers.
 
-## Quick start
-
-### Hosted (rate limited, no install)
-
-```bash
-# Get a passkey (one per IP, resets hourly)
-curl https://classifier.hermionai.xyz/access
-
-# Classify messages
-curl -X POST https://classifier.hermionai.xyz/classify \
-  -H "Content-Type: application/json" \
-  -H "X-Hermion-Key: <your-passkey>" \
-  -d '{
-    "messages": [
-      { "actor": "Alex", "ts": "2025-01-01T10:00:00Z", "text": "I really miss you right now" },
-      { "actor": "Sam",  "ts": "2025-01-01T10:05:00Z", "text": "Miss you too, when are you back?" },
-      { "actor": "Alex", "ts": "2025-01-01T10:06:00Z", "text": "Next week, can'\''t wait to see you" }
-    ]
-  }'
+Chen Wei  00:01:30
+That's encouraging. What does churn look like?
 ```
 
-### Self-hosted (no rate limits)
+**Format 2 — WebVTT (.vtt from Zoom / Google Meet)**
+```
+00:01:23.000 --> 00:01:28.000
+<v Alex Chen>We've been seeing really strong retention numbers.
 
-```bash
-git clone https://github.com/hermionai/hermion-classifier-os
-cd hermion-classifier-os
-npm install
-cp .env.example .env
-npm start
+00:01:28.500 --> 00:01:34.000
+<v Chen Wei>That's encouraging. What does churn look like?
 ```
 
-Then classify against your own instance:
-
-```bash
-curl -X POST http://localhost:3002/classify \
-  -H "Content-Type: application/json" \
-  -H "X-Hermion-Key: <your-passkey>" \
-  -d '{ "messages": [...] }'
+**Format 3 — Plain colon-separated (manual / no timestamps)**
+```
+Alex Chen: We've been seeing really strong retention numbers.
+Chen Wei: That's encouraging. What does churn look like?
 ```
 
----
+**Format 4 — Notion AI / markdown bold speaker**
+```
+**Alex Chen:** We've been seeing really strong retention numbers.
 
-## Message format
-
-Every message in the `messages` array follows this shape:
-
-### Text message
-```json
-{
-  "actor": "Alex",
-  "ts": "2025-01-01T10:00:00Z",
-  "text": "I really miss you right now"
-}
+**Chen Wei:** That's encouraging. What does churn look like?
 ```
 
-### Gap signal (silence between messages)
-```json
-{
-  "actor": "Alex",
-  "ts": "2025-01-15T00:00:00Z",
-  "is_gap": true,
-  "gap_days": 14
-}
-```
+### Parse to standard message array
 
-### Voice / video call
-```json
-{
-  "actor": "Alex",
-  "ts": "2025-01-01T10:00:00Z",
-  "call_type": "voice",
-  "call_duration_min": 22,
-  "missed_call": false
-}
-```
-
-### Missed call
-```json
-{
-  "actor": "Alex",
-  "ts": "2025-01-01T10:00:00Z",
-  "call_type": "voice",
-  "call_duration_min": 0,
-  "missed_call": true
-}
-```
-
-**Field reference:**
-
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `actor` | string | ✅ | Message sender identifier |
-| `ts` | ISO8601 string | ✅ | Message timestamp |
-| `text` | string | for text messages | Message content |
-| `is_gap` | boolean | for gaps | Marks a silence period |
-| `gap_days` | float | with `is_gap` | Duration of silence in days |
-| `call_type` | string | for calls | `"voice"` or `"video"` |
-| `call_duration_min` | integer | for calls | Duration in minutes |
-| `missed_call` | boolean | for calls | Whether call was answered |
-
----
-
-## Signal output
-
-The classifier returns encoded Hermion Signals — no readable category names, no plain floats. Each signal is a compact representation of interaction dynamics at that moment.
-
-```json
-{
-  "signals": [
-    {
-      "actor": "Alex",
-      "ts": "2025-01-01T10:00:00Z",
-      "target": "Sam",
-      "cat": "cat_a1f2",
-      "evt": "evt_085010",
-      "a": "u*0.923*1.0",
-      "b": "min(q,s*0.923+0.15*0.077)",
-      "gh": "gh_c1",
-      "meta": {
-        "response_latency_sec": null,
-        "message_length": 27,
-        "read_state": "unknown",
-        "time_of_day": "morning"
-      },
-      "confidence": 0.923,
-      "is_gap_signal": false,
-      "gap_days": null,
-      "call_type": null,
-      "call_duration_min": null,
-      "missed_call": false
-    }
-  ],
-  "count": 3
-}
-```
-
-These signals are the input to Hermion's analysis engine. They contain no message content — only dynamics.
-
----
-
-## Using signals with the Hermion API
-
-Pass encoded signals directly to `/api/v1/analyze`:
+After parsing, assign synthetic timestamps if the format has none (30 seconds apart is the convention). Then call the classifier exactly as you would for any conversation:
 
 ```javascript
-// Step 1 — classify
-const classifyRes = await fetch('https://classifier.hermionai.xyz/classify', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'X-Hermion-Key': passkey,
+// After parsing any format above:
+const messages = [
+  {
+    actor: "Alex Chen",
+    ts: "2025-01-01T00:01:23Z",  // from transcript, or synthetic
+    text: "We've been seeing really strong retention numbers."
   },
-  body: JSON.stringify({ messages }),
+  {
+    actor: "Chen Wei",
+    ts: "2025-01-01T00:01:30Z",
+    text: "That's encouraging. What does churn look like?"
+  }
+]
+
+// Call the classifier — nothing changes from the messaging flow:
+const res = await fetch("https://classifier.hermionai.xyz/classify", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-Hermion-Key": passkey
+  },
+  body: JSON.stringify({ messages })
+})
+const { signals } = await res.json()
+```
+
+Then pass signals to `/api/v1/analyze` as normal, with `self_name` set to whichever speaker or group name represents you.
+
+**Format reference:**
+
+| Format | Timestamp | Source |
+|---|---|---|
+| Labeled turns (`Name  HH:MM:SS`) | From transcript | Zoom, Otter.ai, Fireflies |
+| WebVTT (`.vtt`) | From cue timestamps | Zoom, Google Meet |
+| Plain colon (`Name: text`) | Synthetic (30s apart) | Manual notes, plain paste |
+| Markdown bold (`**Name:** text`) | Synthetic (30s apart) | Notion AI, meeting notes |
+
+**Automation pattern:** As your meeting ends, your transcription tool exports the file. Your server parses it, calls the classifier, calls `/api/v1/analyze`. Intelligence is delivered to your team before they finish writing their notes — no manual upload, no interface required.
+
+---
+
+## Group Intelligence
+
+Group Intelligence works by preparing the message array before the classifier runs. The classifier and API are unchanged — they always operate on exactly two actors. Your job is to decide which actors matter, which to ignore, and how to label the two sides.
+
+### Step 1 — Parse the group export
+
+Export any group conversation and parse it into a standard message array. Works with WhatsApp group exports (`.zip` or `.txt`), Slack exports, Discord exports, or any meeting transcript with 3+ speakers.
+
+```javascript
+// Raw parsed messages — 4 actors detected
+const rawMessages = [
+  { actor: "Alex",  ts: "2025-01-01T10:00:00Z", text: "We're at 94% retention MoM." },
+  { actor: "Maya",  ts: "2025-01-01T10:01:00Z", text: "Enterprise churn is our strongest segment." },
+  { actor: "Chen",  ts: "2025-01-01T10:02:00Z", text: "That's encouraging. When does your round close?" },
+  { actor: "James", ts: "2025-01-01T10:03:00Z", text: "We'll need one more month of data." },
+  { actor: "Alex",  ts: "2025-01-01T10:04:00Z", text: "We're targeting end of Q3." },
+]
+```
+
+### Step 2 — Define your groups
+
+Assign each actor to a group name, or leave them out to ignore them. Ignored actors are stripped entirely — their messages are removed before the classifier runs. The two group names become the actor identifiers the engine sees.
+
+```javascript
+const actorGroups = {
+  "Alex":  "Startup",         // assigned to Group 1
+  "Maya":  "Startup",         // assigned to Group 1
+  "Chen":  "Investor Group",  // assigned to Group 2
+  "James": "Investor Group",  // assigned to Group 2
+  // any actor not listed is ignored and stripped
+}
+
+function prepareGroupMessages(messages, actorGroups) {
+  return messages
+    .filter(msg => msg.actor in actorGroups)   // strip ignored actors
+    .map(msg => ({
+      ...msg,
+      actor: actorGroups[msg.actor]            // remap to group name
+    }))
+}
+
+const preparedMessages = prepareGroupMessages(rawMessages, actorGroups)
+// Classifier and API see only two actors: "Startup" and "Investor Group"
+```
+
+### Step 3 — Call classifier and analyze
+
+```javascript
+// Classify — same call as always
+const classifyRes = await fetch("https://classifier.hermionai.xyz/classify", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-Hermion-Key": passkey
+  },
+  body: JSON.stringify({ messages: preparedMessages })
 })
 const { signals } = await classifyRes.json()
 
-// Step 2 — analyze
-const analyzeRes = await fetch('https://api.hermionai.xyz/api/v1/analyze', {
-  method: 'POST',
+// Analyze — self_name is your group name
+const analyzeRes = await fetch("https://api.hermionai.xyz/api/v1/analyze", {
+  method: "POST",
   headers: {
-    'Content-Type':  'application/json',
-    'Authorization': 'Bearer herm_sk_live_...',
+    "Content-Type": "application/json",
+    "Authorization": "Bearer herm_sk_live_..."
   },
   body: JSON.stringify({
     signals,
-    context_type: 'relationship',  // relationship | fling | friendship | professional | sales | deal | family
-    self_name:    'Alex',
-  }),
+    context_type: "deal",
+    self_name: "Startup"   // whichever group name is yours
+  })
 })
 const intelligence = await analyzeRes.json()
 ```
 
-Get your API key at [hermionai.xyz/get-started](https://hermionai.xyz/get-started).
+### Preserving individual speaker attribution
 
----
+The classifier output shows `actor: "Startup"` for all Group 1 signals. If you want individual speaker attribution in your own logging or display layer, keep a parallel map and enrich on your side — never send it to the API:
 
-## MCP (Model Context Protocol)
-
-Hermion exposes five MCP tools for AI agents. Add to your `claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "hermion": {
-      "url": "https://api.hermionai.xyz/mcp/sse",
-      "headers": {
-        "Authorization": "Bearer herm_sk_live_..."
-      }
-    }
-  }
-}
+```javascript
+// Build display labels from your original mapping
+const displayMap = {}
+Object.entries(actorGroups).forEach(([speaker, group]) => {
+  displayMap[speaker] = `${speaker} (${group})`
+})
+// { "Alex": "Alex (Startup)", "Maya": "Maya (Startup)", ... }
+// Use this for your own signal trace display only
 ```
 
-### Available tools
+### Common patterns
 
-| Tool | Input | Returns |
+| Pattern | Actor mapping | `self_name` |
 |---|---|---|
-| `hermion_classify` | `messages[]` | Encoded Hermion Signals |
-| `hermion_analyze` | `signals[]` | Full intelligence — progression, momentum, next move, risks, diagnosis |
-| `hermion_get_state` | `signals[]` | Progression + momentum + interest level |
-| `hermion_recommend_move` | `signals[]` | Next move + reasons |
-| `hermion_detect_risks` | `signals[]` | Risk scores + short circuits |
+| Two-side meeting | Your team → `"Us"`, their team → `"Them"` | `"Us"` |
+| Investor call | Founders → `"Startup"`, GPs → `"Investors"` | `"Startup"` |
+| Team pair evaluation | Alice → `"Alice"`, Bob → `"Bob"`, everyone else ignored | `"Alice"` |
+| GP split (isolate decision maker) | Chen → `"Startup"`, James → `"Investors"`, others ignored | `"Startup"` |
+| Ally detection | Your team + target → `"Our Side"`, rest → `"Their Side"` | `"Our Side"` |
+| Meeting with 3+ speakers | Parse transcript, apply group mapping above | your group name |
 
-**Always call `hermion_classify` first.** The other tools take signals as input — not raw messages.
-
-```
-Agent → hermion_classify(messages) → signals
-Agent → hermion_get_state(signals) → current state
-Agent → hermion_recommend_move(signals) → what to do next
-Agent → hermion_detect_risks(signals) → what to watch out for
-```
-
----
-
-## Rate limits (hosted)
-
-| Tier | Limit |
-|---|---|
-| Public (passkey) | 30 calls / minute per IP |
-| Self-hosted | No limits |
-
-For production or high-volume use, self-host this repo. It runs on any Node.js server and the model weights are included.
-
----
-
-## Environment variables
-
-```bash
-PORT=3002                          # Server port
-HERMION_INTERNAL_SECRET=           # Secret for internal/backend use (bypasses rate limits)
-```
-
----
-
-## Self-hosting for maximum privacy
-
-Self-hosting gives you:
-- **No rate limits** — classify as many messages as your server can handle
-- **Complete data isolation** — messages never leave your infrastructure
-- **Verifiable privacy** — inspect every line of this code
-
-The only data that leaves your server is the encoded signal payload you choose to send to `api.hermionai.xyz`. That payload contains no message content.
-
----
-
-## What this is not
-
-This classifier does not contain Hermion's analysis engine. It is not possible to reconstruct Hermion's intelligence from this repository. The encoded signals it produces are interpretable only by Hermion's backend — which applies a proprietary physics theorem to model interaction dynamics.
-
-This is intentional. Open source is for trust. The intelligence layer is Hermion's.
-
----
-
-## License
-
-MIT — use it, inspect it, self-host it.
-
----
-
-**[Try Hermion](https://hermionai.xyz) · [Get an API key](https://hermionai.xyz/get-started) · [Read the docs](https://hermionai.xyz/docs)**
+**Note:** Meeting transcripts with 3+ speakers use the same group preparation flow. Group Intelligence and Meeting Intelligence share identical classifier and API calls — the only difference is input preparation.
